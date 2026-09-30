@@ -1,0 +1,83 @@
+@baseUrl = http://localhost:5273
+
+GET {{baseUrl}}/api/products/999
+
+###
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Parlante portátil",
+  "price": 15000
+}
+
+###
+GET {{baseUrl}}/api/products
+
+###
+PUT {{baseUrl}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Mouse actualizado",
+  "price": 4500
+}
+
+###
+PUT {{baseUrl}}/api/products/999
+Content-Type: application/json
+
+{
+  "name": "Producto inexistente",
+  "price": 100
+}
+
+###
+DELETE {{baseUrl}}/api/products/2
+
+###
+DELETE {{baseUrl}}/api/products/2
+
+###
+GET http://localhost:5273/api/products/search?name=mouse
+
+###
+GET http://localhost:5273/api/products/stats
+
+###
+POST http://localhost:5273/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": 100
+}
+###
+POST http://localhost:5273/api/products
+Content-Type: application/json
+
+{
+  "name": "Notebook Dell Inspiron",
+  "price": 100
+}
+###
+PUT http://localhost:5273/api/products/10
+Content-Type: application/json
+
+{
+  "name": "Notebook Dell Inspiron",
+  "price": 100
+}
+###
+PUT http://localhost:5273/api/products/10
+Content-Type: application/json
+
+{
+  "name": "Impresora multifunción",
+  "price": 73900
+}
+###
+GET {{baseUrl}}/api/products/1
+
+###
+GET {{baseUrl}}/api/products/999

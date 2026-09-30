@@ -1,0 +1,6 @@
+@AbmProductos_HostAddress = http://localhost:5273
+
+GET {{AbmProductos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
