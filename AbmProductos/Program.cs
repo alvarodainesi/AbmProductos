@@ -2,6 +2,8 @@ using AbmProductos.Repositories.Interfaces;
 using AbmProductos.Repositories.Implementations;
 using AbmProductos.Services.Interfaces;
 using AbmProductos.Services;
+using AbmProductos.Data;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +12,11 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddDbContext<AbmProductosContext>(options =>
+    options.UseSqlite(
+        builder.Configuration["ConnectionStrings:AbmProductosDBConnectionString"]));
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

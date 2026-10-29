@@ -81,3 +81,29 @@ GET {{baseUrl}}/api/products/1
 
 ###
 GET {{baseUrl}}/api/products/999
+
+###
+GET http://localhost:5273/api/products/1
+
+###
+POST http://localhost:5273/api/products
+Content-Type: application/json
+
+{
+  "name": "Mouse de prueba",
+  "price": 5000
+}
+
+###
+GET http://localhost:5273/api/products/2
+
+###
+PUT http://localhost:5273/api/products/2
+Content-Type: application/json
+
+{
+  "name": "Mouse de prueba actualizado",
+  "price": 6500
+}
+###
+DELETE http://localhost:5273/api/products/2
